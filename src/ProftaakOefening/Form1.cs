@@ -39,24 +39,20 @@ namespace ProftaakOefening
             webcam.Stop();
         }
 
-        //private void bntVideoFormat_Click(object sender, EventArgs e)
-        //{
-        //    webcam.ResolutionSetting();
-        //}
+        private void bntVideoFormat_Click(object sender, EventArgs e)
+        {
+            webcam.ResolutionSetting();
+        }
 
-        //private void bntVideoSource_Click(object sender, EventArgs e)
-        //{
-        //    webcam.AdvanceSetting();
-        //}
+        private void bntVideoSource_Click(object sender, EventArgs e)
+        {
+            webcam.AdvanceSetting();
+        }
 
 
         private void Save_click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 100000; i++)
-            {
             saver.SaveImageCapture(pictureBox.Image);
-            //label1.Text = saver.counter.ToString();
-           }
         }
 
         
