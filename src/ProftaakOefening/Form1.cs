@@ -14,28 +14,24 @@ namespace ProftaakOefening
         
     public partial class Form1 : Form
     {
-        
+        WebCam webcam;
+        Saver saver = new Saver();
+
         public Form1()
         {
             InitializeComponent();
-            mainWinForm_Load(null, null);
-           
-            
+            mainWinForm_Load(null, null);              
         }
-        WebCam webcam;
+        
         private void mainWinForm_Load(object sender, EventArgs e)
         {
             webcam = new WebCam();
             webcam.InitializeWebCam(ref pictureBox);
-            webcam.Start();
         }
 
         private void bntStart_Click(object sender, EventArgs e)
         {
-            
-            webcam.Start();
-                
-            
+            webcam.Start();  
         }
 
         private void bntStop_Click(object sender, EventArgs e)
@@ -43,51 +39,24 @@ namespace ProftaakOefening
             webcam.Stop();
         }
 
-        private void bntContinue_Click(object sender, EventArgs e)
-        {
-            webcam.Continue();
-        }
-
-        //private void bntCapture_Click(object sender, EventArgs e)
+        //private void bntVideoFormat_Click(object sender, EventArgs e)
         //{
-        //    imgCapture.Image = imgVideo.Image;
+        //    webcam.ResolutionSetting();
         //}
 
-        //private void bntSave_Click(object sender, EventArgs e)
+        //private void bntVideoSource_Click(object sender, EventArgs e)
         //{
-        //    Helper.SaveImageCapture(imgCapture.Image);
+        //    webcam.AdvanceSetting();
         //}
 
-        private void bntVideoFormat_Click(object sender, EventArgs e)
-        {
-            webcam.ResolutionSetting();
-        }
-
-        private void bntVideoSource_Click(object sender, EventArgs e)
-        {
-            webcam.AdvanceSetting();
-        }
-
-        private void imgVideo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void Save_click(object sender, EventArgs e)
         {
-            Saver saver = new Saver();
+            for (int i = 0; i < 100000; i++)
+            {
             saver.SaveImageCapture(pictureBox.Image);
-
+            //label1.Text = saver.counter.ToString();
+           }
         }
 
         
