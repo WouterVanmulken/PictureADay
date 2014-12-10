@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.Form1.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.Properties.Resources.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\bin\Debug\ProftaakOefening.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\bin\Debug\ProftaakOefening.pdb
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\bin\Debug\WebCam_Capture.dll
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
