@@ -49,7 +49,7 @@ namespace ProftaakOefening
             image.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
             fstream.Close();
             counter++;
-            //}
+            
 
             
 
