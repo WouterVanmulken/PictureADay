@@ -1,6 +1,6 @@
 ﻿namespace ProftaakOefening
 {
-    partial class Form1
+    partial class PictureADayForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PictureADayForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.startBtn = new System.Windows.Forms.Button();
             this.stopBtn = new System.Windows.Forms.Button();
@@ -43,11 +44,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.aanpassenBtn = new System.Windows.Forms.Button();
-            this.verwijderenBtn = new System.Windows.Forms.Button();
-            this.toevoegenBtn = new System.Windows.Forms.Button();
-            this.LijstBtn = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -76,7 +75,6 @@
             // 
             // stopBtn
             // 
-            this.stopBtn.Enabled = false;
             this.stopBtn.Location = new System.Drawing.Point(4, 48);
             this.stopBtn.Name = "stopBtn";
             this.stopBtn.Size = new System.Drawing.Size(75, 23);
@@ -181,56 +179,22 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.aanpassenBtn);
-            this.groupBox3.Controls.Add(this.verwijderenBtn);
-            this.groupBox3.Controls.Add(this.toevoegenBtn);
-            this.groupBox3.Controls.Add(this.LijstBtn);
-            this.groupBox3.Location = new System.Drawing.Point(657, 222);
+            this.groupBox3.Location = new System.Drawing.Point(657, 252);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(241, 80);
+            this.groupBox3.Size = new System.Drawing.Size(121, 50);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Personen Controls";
+            this.groupBox3.Text = "People Data";
             // 
             // aanpassenBtn
             // 
-            this.aanpassenBtn.Enabled = false;
-            this.aanpassenBtn.Location = new System.Drawing.Point(6, 49);
+            this.aanpassenBtn.Location = new System.Drawing.Point(6, 19);
             this.aanpassenBtn.Name = "aanpassenBtn";
-            this.aanpassenBtn.Size = new System.Drawing.Size(75, 23);
+            this.aanpassenBtn.Size = new System.Drawing.Size(106, 23);
             this.aanpassenBtn.TabIndex = 3;
-            this.aanpassenBtn.Text = "Aanpassen";
+            this.aanpassenBtn.Text = "Change Data";
             this.aanpassenBtn.UseVisualStyleBackColor = true;
-            // 
-            // verwijderenBtn
-            // 
-            this.verwijderenBtn.Enabled = false;
-            this.verwijderenBtn.Location = new System.Drawing.Point(155, 50);
-            this.verwijderenBtn.Name = "verwijderenBtn";
-            this.verwijderenBtn.Size = new System.Drawing.Size(75, 23);
-            this.verwijderenBtn.TabIndex = 2;
-            this.verwijderenBtn.Text = "Verwijderen";
-            this.verwijderenBtn.UseVisualStyleBackColor = true;
-            // 
-            // toevoegenBtn
-            // 
-            this.toevoegenBtn.Enabled = false;
-            this.toevoegenBtn.Location = new System.Drawing.Point(6, 19);
-            this.toevoegenBtn.Name = "toevoegenBtn";
-            this.toevoegenBtn.Size = new System.Drawing.Size(75, 23);
-            this.toevoegenBtn.TabIndex = 0;
-            this.toevoegenBtn.Text = "Toevoegen";
-            this.toevoegenBtn.UseVisualStyleBackColor = true;
-            this.toevoegenBtn.Click += new System.EventHandler(this.toevoegenBtn_Click);
-            // 
-            // LijstBtn
-            // 
-            this.LijstBtn.Enabled = false;
-            this.LijstBtn.Location = new System.Drawing.Point(155, 19);
-            this.LijstBtn.Name = "LijstBtn";
-            this.LijstBtn.Size = new System.Drawing.Size(75, 23);
-            this.LijstBtn.TabIndex = 1;
-            this.LijstBtn.Text = "Lijst";
-            this.LijstBtn.UseVisualStyleBackColor = true;
+            this.aanpassenBtn.Click += new System.EventHandler(this.changeDataBtn_Click);
             // 
             // serialPort1
             // 
@@ -240,7 +204,14 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Form1
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // PictureADayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,7 +221,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "PictureADayForm";
             this.Text = "Picture A Day";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -278,11 +250,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button aanpassenBtn;
-        private System.Windows.Forms.Button verwijderenBtn;
-        private System.Windows.Forms.Button LijstBtn;
-        private System.Windows.Forms.Button toevoegenBtn;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

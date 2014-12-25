@@ -12,6 +12,8 @@ namespace ProftaakOefening
 {
     public partial class PopUpForm : Form
     {
+        public string latestName;
+        public string latestAge;
         public PopUpForm()
         {
             InitializeComponent();
@@ -19,7 +21,9 @@ namespace ProftaakOefening
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            latestName = popUpFormNaamTxtBox.Text;
+            latestAge = popUpFormLeeftijdNud.Value.ToString();
+            
         }
     }
 }

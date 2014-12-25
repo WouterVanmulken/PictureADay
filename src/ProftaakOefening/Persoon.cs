@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProftaakOefening
 {
-
+    //unnecisary class since we use a database
     class Persoon
     {
         string naam;

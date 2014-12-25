@@ -14,24 +14,24 @@ using System.IO.Ports;
 namespace ProftaakOefening
 {
 
-    public partial class Form1 : Form
+    public partial class PictureADayForm : Form
     {
         WebCam webcam;
         Saver saver = new Saver();
         List<Persoon> personen = new List<Persoon>();
 
-        public Form1()
+        public PictureADayForm()
         {
             InitializeComponent();
 
             //webcam
             webcam = new WebCam();
             webcam.InitializeWebCam(ref pictureBox1);
-            webcam.Start();
+            //webcam.Start();
 
             //add comports and connects it
             rescanBtn_Click(null, null);
-            if (serialPortSelectionBox.Items.Count != 0) { serialPortSelectionBox.SelectedIndex = 0; connectBtn_Click(null, null); MessageBox.Show("Connection to arduino has been established"); }
+            if (serialPortSelectionBox.Items.Count != 0) { serialPortSelectionBox.SelectedIndex = 0; }//connectBtn_Click(null, null); MessageBox.Show("Connection to arduino has been established"); }
             else { MessageBox.Show("No connected devices found."); }
 
             serialPort1.BaudRate = 9600;
@@ -46,6 +46,7 @@ namespace ProftaakOefening
         private void bntStop_Click(object sender, EventArgs e)
         {
             webcam.Stop();
+            pictureBox1.Image = null;
         }
 
         private void bntVideoFormat_Click(object sender, EventArgs e)
@@ -154,9 +155,9 @@ namespace ProftaakOefening
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-
+            //dit word gebruikt om te reageren op de arduino
             MessageBox.Show(e.ToString());
-            
+
             switch (serialPort1.ReadChar())
             {
                 case 0:
@@ -189,12 +190,35 @@ namespace ProftaakOefening
                 case 9:
                     MessageBox.Show("9");
                     break;
-                
+
                 default:
                     MessageBox.Show("something went wrong");
                     break;
             }
             //needs some work
+        }
+
+        private void changeDataBtn_Click(object sender, EventArgs e)
+        {
+            using (PopUpForm popupForm = new PopUpForm())
+            {
+                if (popupForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //hier kun je data van de form ophalen
+                }
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.Visible == true)
+            {
+                this.Visible = false;
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
 
     }
