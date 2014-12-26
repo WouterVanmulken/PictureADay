@@ -61,7 +61,7 @@ namespace ProftaakOefening
 
         private void Save_click(object sender, EventArgs e)
         {
-            saver.SaveImageCapture(pictureBox1.Image);
+            saver.SaveImageCapture(pictureBox1.Image, saver.counter);//saver.counter is niet goed genoeg dit moet met sql worden opgeslagen of deze button moet worden opgeheven.
             pictureBox2.Image = pictureBox1.Image;
         }
 

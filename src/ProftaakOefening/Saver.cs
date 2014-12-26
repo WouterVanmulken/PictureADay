@@ -11,10 +11,12 @@ namespace ProftaakOefening
 {
     class Saver
     {
-        public int counter = 1;
+        public int counter = 1;//might be a little outdated since we're going to be using a database to determine which is the highest number that has been made
         string counterString;
+
         
-        public  void SaveImageCapture(System.Drawing.Image image)
+        
+        public  void SaveImageCapture(System.Drawing.Image image, int counter)
         {
 
             if (counter < 10) 
