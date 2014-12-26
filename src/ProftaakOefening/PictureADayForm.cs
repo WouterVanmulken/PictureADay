@@ -156,43 +156,43 @@ namespace ProftaakOefening
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             //dit word gebruikt om te reageren op de arduino
-            MessageBox.Show(e.ToString());
-
-            switch (serialPort1.ReadChar())
+            
+            switch (serialPort1.ReadLine())
             {
-                case 0:
+                case "0":
                     MessageBox.Show("0");
                     break;
-                case 1:
+                case "1":
                     MessageBox.Show("1");
                     break;
-                case 2:
+                case "2":
                     MessageBox.Show("2");
                     break;
-                case 3:
+                case "3":
                     MessageBox.Show("3");
                     break;
-                case 4:
+                case "4":
                     MessageBox.Show("4");
                     break;
-                case 5:
+                case "5":
                     MessageBox.Show("5");
                     break;
-                case 6:
+                case "6":
                     MessageBox.Show("6");
                     break;
-                case 7:
+                case "7":
                     MessageBox.Show("7");
                     break;
-                case 8:
+                case "8":
                     MessageBox.Show("8");
                     break;
-                case 9:
+                case "9":
                     MessageBox.Show("9");
                     break;
 
                 default:
-                    MessageBox.Show("something went wrong");
+                    MessageBox.Show(serialPort1.ReadChar().ToString());
+                   // MessageBox.Show("something went wrong");
                     break;
             }
             //needs some work
