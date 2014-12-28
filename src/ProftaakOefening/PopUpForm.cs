@@ -39,7 +39,7 @@ namespace ProftaakOefening
             {
                 MessageBox.Show("Please enter a valid Age");
             }
-            else if (cbGender.Text == "Gender")
+            else if (cbGender.Text != "Male" || cbGender.Text!="Female")
             {
                 MessageBox.Show("Please enter a valid Gender");
             }
