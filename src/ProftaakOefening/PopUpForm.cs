@@ -49,10 +49,6 @@ namespace ProftaakOefening
                 {
                     PersonIdCounter++; 
                 }
-                tbName.Text = "Naam";
-                tbAge.Text = "Leeftijd";
-                cbGender.Text = "Gender";
-                RefreshForm();
             }
         }
 

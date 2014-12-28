@@ -16,7 +16,7 @@ namespace ProftaakOefening
 
         
         
-        public  void SaveImageCapture(System.Drawing.Image image, int counter)
+        public  void SaveImageCapture(System.Drawing.Image image, int counter, int personID)
         {
 
             if (counter < 10) 
@@ -43,8 +43,8 @@ namespace ProftaakOefening
 
 
             SaveFileDialog s = new SaveFileDialog();
-
-            s.FileName = ("D:\\Image" + counterString + ".Jpeg");// Default file name
+            //p stands for person and i stands for image 
+            s.FileName = ("D:\\P" + personID + "I" +counterString + ".Jpeg");// Default file name
             
             string filename = s.FileName;
             System.IO.FileStream fstream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
@@ -52,9 +52,6 @@ namespace ProftaakOefening
             fstream.Close();
             counter++;
             
-
-            
-
         }
     }
 }
