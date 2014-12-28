@@ -28,70 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.popUpFormNaamLbl = new System.Windows.Forms.Label();
-            this.popUpFormLeeftijdLbl = new System.Windows.Forms.Label();
-            this.popUpFormNaamTxtBox = new System.Windows.Forms.TextBox();
-            this.popUpFormLeeftijdNud = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.popUpFormLeeftijdNud)).BeginInit();
+            this.lbPeople = new System.Windows.Forms.ListBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // popUpFormNaamLbl
+            // lbPeople
             // 
-            this.popUpFormNaamLbl.AutoSize = true;
-            this.popUpFormNaamLbl.Location = new System.Drawing.Point(12, 31);
-            this.popUpFormNaamLbl.Name = "popUpFormNaamLbl";
-            this.popUpFormNaamLbl.Size = new System.Drawing.Size(35, 13);
-            this.popUpFormNaamLbl.TabIndex = 0;
-            this.popUpFormNaamLbl.Text = "Naam";
+            this.lbPeople.FormattingEnabled = true;
+            this.lbPeople.Items.AddRange(new object[] {
+            " "});
+            this.lbPeople.Location = new System.Drawing.Point(24, 25);
+            this.lbPeople.Name = "lbPeople";
+            this.lbPeople.Size = new System.Drawing.Size(323, 225);
+            this.lbPeople.TabIndex = 0;
             // 
-            // popUpFormLeeftijdLbl
+            // addBtn
             // 
-            this.popUpFormLeeftijdLbl.AutoSize = true;
-            this.popUpFormLeeftijdLbl.Location = new System.Drawing.Point(12, 61);
-            this.popUpFormLeeftijdLbl.Name = "popUpFormLeeftijdLbl";
-            this.popUpFormLeeftijdLbl.Size = new System.Drawing.Size(41, 13);
-            this.popUpFormLeeftijdLbl.TabIndex = 1;
-            this.popUpFormLeeftijdLbl.Text = "Leeftijd";
+            this.addBtn.Location = new System.Drawing.Point(24, 476);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(159, 23);
+            this.addBtn.TabIndex = 1;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // popUpFormNaamTxtBox
+            // deleteBtn
             // 
-            this.popUpFormNaamTxtBox.Location = new System.Drawing.Point(80, 28);
-            this.popUpFormNaamTxtBox.Name = "popUpFormNaamTxtBox";
-            this.popUpFormNaamTxtBox.Size = new System.Drawing.Size(100, 20);
-            this.popUpFormNaamTxtBox.TabIndex = 2;
+            this.deleteBtn.Location = new System.Drawing.Point(205, 476);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(142, 23);
+            this.deleteBtn.TabIndex = 2;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // popUpFormLeeftijdNud
+            // tbName
             // 
-            this.popUpFormLeeftijdNud.Location = new System.Drawing.Point(80, 59);
-            this.popUpFormLeeftijdNud.Name = "popUpFormLeeftijdNud";
-            this.popUpFormLeeftijdNud.Size = new System.Drawing.Size(100, 20);
-            this.popUpFormLeeftijdNud.TabIndex = 3;
+            this.tbName.Location = new System.Drawing.Point(24, 285);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(323, 20);
+            this.tbName.TabIndex = 3;
             // 
-            // button1
+            // label1
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(61, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Klaar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 269);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(21, 315);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Age";
+            // 
+            // tbAge
+            // 
+            this.tbAge.Location = new System.Drawing.Point(24, 331);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(323, 20);
+            this.tbAge.TabIndex = 5;
+            // 
+            // cbGender
+            // 
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "Man",
+            "Vrouw"});
+            this.cbGender.Location = new System.Drawing.Point(24, 375);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(323, 21);
+            this.cbGender.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 359);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Gender";
             // 
             // PopUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(205, 144);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.popUpFormLeeftijdNud);
-            this.Controls.Add(this.popUpFormNaamTxtBox);
-            this.Controls.Add(this.popUpFormLeeftijdLbl);
-            this.Controls.Add(this.popUpFormNaamLbl);
+            this.ClientSize = new System.Drawing.Size(373, 519);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbGender);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbAge);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.addBtn);
+            this.Controls.Add(this.lbPeople);
             this.Name = "PopUpForm";
             this.Text = "Data";
-            ((System.ComponentModel.ISupportInitialize)(this.popUpFormLeeftijdNud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,10 +144,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label popUpFormNaamLbl;
-        private System.Windows.Forms.Label popUpFormLeeftijdLbl;
-        private System.Windows.Forms.TextBox popUpFormNaamTxtBox;
-        private System.Windows.Forms.NumericUpDown popUpFormLeeftijdNud;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox lbPeople;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.Label label3;
+
     }
 }

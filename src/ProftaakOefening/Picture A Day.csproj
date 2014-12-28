@@ -51,13 +51,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arduino.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="PictureADayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PictureADayForm.Designer.cs">
       <DependentUpon>PictureADayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persoon.cs" />
     <Compile Include="PopUpForm.cs">
       <SubType>Form</SubType>
     </Compile>

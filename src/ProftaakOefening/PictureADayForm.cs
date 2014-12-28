@@ -18,7 +18,7 @@ namespace ProftaakOefening
     {
         WebCam webcam;
         Saver saver = new Saver();
-        List<Persoon> personen = new List<Persoon>();
+        List<Person> people = new List<Person>();
 
         public PictureADayForm()
         {
@@ -118,17 +118,6 @@ namespace ProftaakOefening
         }
 
 
-
-
-
-
-
-        //gewone methodes geen onclicks meer
-        public void Toevoegen(string naam, int leeftijd)
-        {
-            personen.Add(new Persoon(naam, leeftijd));
-
-        }
 
 
         private void rescanBtn_Click(object sender, EventArgs e)
