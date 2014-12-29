@@ -41,6 +41,7 @@ namespace ProftaakOefening
         private void bntStart_Click(object sender, EventArgs e)
         {
             webcam.Start();
+                
         }
 
         private void bntStop_Click(object sender, EventArgs e)
@@ -97,28 +98,6 @@ namespace ProftaakOefening
             }
 
         }
-
-
-        private void toevoegenBtn_Click(object sender, EventArgs e)
-        {
-            PopUpForm popup = new PopUpForm();
-
-            // Show testDialog as a modal dialog and determine if DialogResult = OK. 
-            if (popup.ShowDialog(this) == DialogResult.OK)
-            {
-                // Read the contents of testDialog's TextBox. 
-                //this.txtResult.Text = testDialog.TextBox1.Text;
-            }
-            else
-            {
-                //this.txtResult.Text = "Cancelled";
-            }
-            popup.Dispose();
-
-        }
-
-
-
 
         private void rescanBtn_Click(object sender, EventArgs e)
         {
