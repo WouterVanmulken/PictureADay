@@ -6,24 +6,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SQLite;
 
 namespace ProftaakOefening
 {
     class Saver
     {
-        public int counter = 1;//might be a little outdated since we're going to be using a database to determine which is the highest number that has been made
+        public int counter = 1;
         string counterString;
+        string imageString;
 
         
-        
-        public  void SaveImageCapture(System.Drawing.Image image, int counter, int personID)
+        //might need to check in folder to prevent overwritting
+        public  void SaveImageCapture(System.Drawing.Image image, int personID)
         {
+            
+           
+            
+            //getting the highest pictureCount
+            SQLiteConnection connection = new SQLiteConnection("Data Source=" + Database.DatabaseFilename + ";Version=3");
 
-            if (counter < 10) 
+            string sql = "select count(*) from Picture where personID=\"" + personID +  "\"";
+            SQLiteCommand command = new SQLiteCommand(sql, connection);
+
+            connection.Open();
+            counter = Convert.ToInt32(command.ExecuteScalar());
+            counter++;      //since you don't want to overwride the previous image
+            connection.Close();
+
+
+            //turning the counter into a counterstring
+            if (counter < 10)
             {
-                counterString = "0000" + counter;   
+                counterString = "0000" + counter;
             }
-            else if(counter<100)
+            else if (counter < 100)
             {
                 counterString = "000" + counter;
             }
@@ -42,17 +59,51 @@ namespace ProftaakOefening
             else { MessageBox.Show("Please use no more then 10000 pictures. This is a limitation because of the filename."); }
 
 
+
+            //converting the image to a string
+            imageString = ImageToBase64(image, System.Drawing.Imaging.ImageFormat.Jpeg);
+            
+
+            //saving to file
             SaveFileDialog s = new SaveFileDialog();
+
             //p stands for person and i stands for image 
-            s.FileName = ("D:\\P" + personID + "I" +counterString + ".Jpeg");// Default file name
+            string fileStorage = "D:\\P" + personID + "I" +counterString + ".Jpeg";
+            s.FileName = (fileStorage);// Default file name
             
             string filename = s.FileName;
             System.IO.FileStream fstream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
             image.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
             fstream.Close();
-            counter++;
-            
+
+
+            //saving to database
+            Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "'" + ", '" + DateTime.Today   + "'" + ", '" + imageString + "'" + ", '" + fileStorage  + "')";
+            Database.OpenConnection();
+
+            bool success = false;
+            try
+            {
+                // ExecuteNonQuery wordt gebruikt als we geen gegevens verwachten van de query
+                Database.Command.ExecuteNonQuery();
+                success = true;
+            }
+            catch (SQLiteException e)
+            {
+                // Code 19 geeft aan dat een veld wat uniek moet zijn in de database, dit door
+                // deze insert niet meer zou zijn. Het is dus niet toegevoegd. 
+                if (e.ErrorCode == 19)
+                {
+                    MessageBox.Show("Something went wrong");
+                }
+            }
+
+            Database.CloseConnection();
+            if (success) { MessageBox.Show("added to database"); }
+            else { MessageBox.Show("Well WTF!!!!!!!!!!!!!"); }
         }
+
+
         //these two classes are used to encode a image to a string and a string to a image
         public string ImageToBase64(Image image,
             System.Drawing.Imaging.ImageFormat format)
