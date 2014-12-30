@@ -38,6 +38,7 @@
             this.connectBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbWebcams = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.aanpassenBtn = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -46,7 +47,6 @@
             this.getImagesFromDatabase = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbWebcams = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(637, 456);
+            this.pictureBox1.Size = new System.Drawing.Size(637, 459);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -134,6 +134,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Camera Controls";
             // 
+            // cbWebcams
+            // 
+            this.cbWebcams.FormattingEnabled = true;
+            this.cbWebcams.Location = new System.Drawing.Point(6, 21);
+            this.cbWebcams.Name = "cbWebcams";
+            this.cbWebcams.Size = new System.Drawing.Size(154, 21);
+            this.cbWebcams.TabIndex = 7;
+            this.cbWebcams.SelectedIndexChanged += new System.EventHandler(this.cbWebcams_SelectedIndexChanged);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.aanpassenBtn);
@@ -185,20 +194,11 @@
             this.getImagesFromDatabase.UseVisualStyleBackColor = true;
             this.getImagesFromDatabase.Click += new System.EventHandler(this.getImagesFromDatabase_Click);
             // 
-            // cbWebcams
-            // 
-            this.cbWebcams.FormattingEnabled = true;
-            this.cbWebcams.Location = new System.Drawing.Point(6, 21);
-            this.cbWebcams.Name = "cbWebcams";
-            this.cbWebcams.Size = new System.Drawing.Size(154, 21);
-            this.cbWebcams.TabIndex = 7;
-            this.cbWebcams.SelectedIndexChanged += new System.EventHandler(this.cbWebcams_SelectedIndexChanged);
-            // 
             // PictureADayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 478);
+            this.ClientSize = new System.Drawing.Size(910, 476);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

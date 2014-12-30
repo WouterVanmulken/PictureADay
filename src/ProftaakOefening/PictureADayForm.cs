@@ -57,7 +57,6 @@ namespace ProftaakOefening
             else { MessageBox.Show("No image to save"); }
 
         }
-
         private void connectBtn_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
@@ -108,49 +107,14 @@ namespace ProftaakOefening
             serialPort1.Close();
         }
 
+        //dit word gebruikt om te reageren op de arduino
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            //dit word gebruikt om te reageren op de arduino
-            
-            switch (serialPort1.ReadLine())
-            {
-                case "0":
-                    MessageBox.Show("0");
-                    break;
-                case "1":
-                    MessageBox.Show("1");
-                    break;
-                case "2":
-                    MessageBox.Show("2");
-                    break;
-                case "3":
-                    MessageBox.Show("3");
-                    break;
-                case "4":
-                    MessageBox.Show("4");
-                    break;
-                case "5":
-                    MessageBox.Show("5");
-                    break;
-                case "6":
-                    MessageBox.Show("6");
-                    break;
-                case "7":
-                    MessageBox.Show("7");
-                    break;
-                case "8":
-                    MessageBox.Show("8");
-                    break;
-                case "9":
-                    MessageBox.Show("9");
-                    break;
+            string serialData= serialPort1.ReadLine().ToString();
+            int tempNumber;
+            Int32.TryParse(serialData, out tempNumber);
 
-                default:
-                    MessageBox.Show(serialPort1.ReadChar().ToString());
-                   // MessageBox.Show("something went wrong");
-                    break;
-            }
-            //needs some work
+            saver.SaveImageCapture(pictureBox1.Image, tempNumber);
         }
 
         private void changeDataBtn_Click(object sender, EventArgs e)
