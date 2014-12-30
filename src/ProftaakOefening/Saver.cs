@@ -144,7 +144,7 @@ namespace ProftaakOefening
             using (MemoryStream ms = new MemoryStream())
             {
                 // Convert Image to byte[]
-                image.Save(ms, format);
+                image.Save(ms, format);                                                         //zegt dat het object op dit moment voor iets anderts word gebruikt
                 byte[] imageBytes = ms.ToArray();
 
                 // Convert byte[] to Base64 String

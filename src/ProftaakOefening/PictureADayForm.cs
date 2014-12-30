@@ -110,11 +110,19 @@ namespace ProftaakOefening
         //dit word gebruikt om te reageren op de arduino
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            string serialData= serialPort1.ReadLine().ToString();
-            int tempNumber;
-            Int32.TryParse(serialData, out tempNumber);
+            try
+            {
+                Image tempImage = manager.CurrentCamera.GetCurrentImage();
+                pictureBox2.Image = tempImage;
 
-            saver.SaveImageCapture(pictureBox1.Image, tempNumber);
+                string serialData = serialPort1.ReadLine().ToString();
+                int tempNumber;
+                Int32.TryParse(serialData, out tempNumber);
+
+                Saver serialSaver = new Saver();
+                serialSaver.SaveImageCapture(tempImage, tempNumber);
+            }
+            catch (Exception exception){ }
         }
 
         private void changeDataBtn_Click(object sender, EventArgs e)
@@ -142,7 +150,7 @@ namespace ProftaakOefening
 
         private void getImagesFromDatabase_Click(object sender, EventArgs e)
         {
-            
+
             DialogResult d = MessageBox.Show("This procces will not overwrite existing files with the same file name, so if you cleared your database before we recommend to change the path of those pictures. ", "Warning", MessageBoxButtons.YesNo);
             if (d == DialogResult.Yes)
             {
@@ -171,7 +179,7 @@ namespace ProftaakOefening
             pictureBox1.Image = manager.CurrentCamera.GetCurrentImage();
         }
 
-       
+
     }
 }
 
