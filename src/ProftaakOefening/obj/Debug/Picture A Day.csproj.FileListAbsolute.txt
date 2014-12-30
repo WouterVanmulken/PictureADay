@@ -9,3 +9,13 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\De
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.exe
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\Picture A Day.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.PopUpForm.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.Properties.Resources.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\Picture A Day.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.pdb

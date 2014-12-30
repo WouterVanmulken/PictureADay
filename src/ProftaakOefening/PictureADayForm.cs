@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WebCam_Capture;
 using System.IO;
 using System.IO.Ports;
+
+using TouchlessLib;
 
 namespace ProftaakOefening
 {
 
     public partial class PictureADayForm : Form
     {
-        WebCam webcam;
+        TouchlessMgr manager;
         Saver saver = new Saver();
         List<Person> people = new List<Person>();
 
@@ -24,10 +25,18 @@ namespace ProftaakOefening
         {
             InitializeComponent();
 
-            //webcam
-            webcam = new WebCam();
-            webcam.InitializeWebCam(ref pictureBox1);
-            //webcam.Start();
+        }
+        private void PictureADayForm_Load(object sender, EventArgs e)
+        {
+            //initialize the touchless manager object
+            manager = new TouchlessMgr();
+
+            //Listing the available cameras in the combobox
+            foreach (Camera item in manager.Cameras)
+            {
+                cbWebcams.Items.Add(item);
+            }
+            cbWebcams.SelectedIndex = 0;
 
             //add comports and connects it
             rescanBtn_Click(null, null);
@@ -36,35 +45,11 @@ namespace ProftaakOefening
 
             serialPort1.BaudRate = 9600;
             serialPort1.NewLine = "#";
-
         }
-        private void bntStart_Click(object sender, EventArgs e)
-        {
-            webcam.Start();
-                
-        }
-
-        private void bntStop_Click(object sender, EventArgs e)
-        {
-            webcam.Stop();
-            pictureBox1.Image = null;
-        }
-
-        private void bntVideoFormat_Click(object sender, EventArgs e)
-        {
-            webcam.ResolutionSetting();
-        }
-
-        private void bntVideoSource_Click(object sender, EventArgs e)
-        {
-            webcam.AdvanceSetting();
-        }
-
         private void Save_click(object sender, EventArgs e)
         {
             if (pictureBox1.Image != null)
             {
-                // saver.SaveImageCapture(pictureBox1.Image, saver.counter);//saver.counter is niet goed genoeg dit moet met sql worden opgeslagen of deze button moet worden opgeheven.
                 pictureBox2.Image = pictureBox1.Image;
                 Saver savefile = new Saver();
                 savefile.SaveImageCapture(pictureBox1.Image, 1);
@@ -121,11 +106,6 @@ namespace ProftaakOefening
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             serialPort1.Close();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -212,6 +192,22 @@ namespace ProftaakOefening
             }
         }
 
+        private void cbWebcams_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //initializing the camera to be used based on the selection
+            manager.CurrentCamera = (Camera)cbWebcams.SelectedItem;
+
+            //Setting the Event handler for the camera
+            manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
+
+        }
+        void CurrentCamera_OnImageCaptured(object sender, CameraEventArgs e)
+        {
+            //Giving the feed of the camera to the picturepox
+            pictureBox1.Image = manager.CurrentCamera.GetCurrentImage();
+        }
+
+       
     }
 }
 

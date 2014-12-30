@@ -37,6 +37,8 @@
             this.tbAge = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbPeople
@@ -44,7 +46,7 @@
             this.lbPeople.FormattingEnabled = true;
             this.lbPeople.Items.AddRange(new object[] {
             " "});
-            this.lbPeople.Location = new System.Drawing.Point(24, 25);
+            this.lbPeople.Location = new System.Drawing.Point(6, 16);
             this.lbPeople.Name = "lbPeople";
             this.lbPeople.Size = new System.Drawing.Size(323, 225);
             this.lbPeople.TabIndex = 0;
@@ -121,11 +123,22 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Gender";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbPeople);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(344, 247);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "People : ";
+            // 
             // PopUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 519);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbGender);
             this.Controls.Add(this.label2);
@@ -134,9 +147,9 @@
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.addBtn);
-            this.Controls.Add(this.lbPeople);
             this.Name = "PopUpForm";
             this.Text = "Data";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,6 +166,7 @@
         private System.Windows.Forms.TextBox tbAge;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

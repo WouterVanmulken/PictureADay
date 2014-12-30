@@ -69,6 +69,7 @@ namespace ProftaakOefening
             {
                 lbPeople.Items.Add(persoon);
             }
+            groupBox1.Text = "People :" + lbPeople.Items.Count;
         }
 
     }
