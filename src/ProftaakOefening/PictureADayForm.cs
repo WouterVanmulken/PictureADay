@@ -198,11 +198,17 @@ namespace ProftaakOefening
 
         private void getImagesFromDatabase_Click(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            
+            DialogResult d = MessageBox.Show("This procces will not overwrite existing files with the same file name, so if you cleared your database before we recommend to change the path of those pictures. ", "Warning", MessageBoxButtons.YesNo);
+            if (d == DialogResult.Yes)
             {
-                string selectedPath = folderBrowserDialog1.SelectedPath;
-                saver.allDatabaseImageSaver(selectedPath);
-                
+
+                if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedPath = folderBrowserDialog1.SelectedPath;
+                    saver.allDatabaseImageSaver(selectedPath);
+
+                }
             }
         }
 

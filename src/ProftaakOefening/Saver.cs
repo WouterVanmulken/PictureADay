@@ -85,104 +85,53 @@ namespace ProftaakOefening
             Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "'" + ", '" + DateTime.Today + "'" + ", '" + imageString + "'" + ", '" + fileStorage + "')";
             Database.OpenConnection();
 
-            bool success = false;
+
             try
             {
                 // ExecuteNonQuery wordt gebruikt als we geen gegevens verwachten van de query
                 Database.Command.ExecuteNonQuery();
-                success = true;
+
             }
             catch (SQLiteException e)
             {
                 // Code 19 geeft aan dat een veld wat uniek moet zijn in de database, dit door
                 // deze insert niet meer zou zijn. Het is dus niet toegevoegd. 
-                if (e.ErrorCode == 19)
-                {
-                    MessageBox.Show("Something went wrong");
-                }
+                MessageBox.Show("something went wrong. The error code is : " + e.ErrorCode.ToString() + ", For more information about what happened you can go to  https://www.sqlite.org/c3ref/c_abort.html");
             }
 
             Database.CloseConnection();
-            if (success) { MessageBox.Show("added to database"); }
-            else { MessageBox.Show("Well WTF!!!!!!!!!!!!!"); }
+
         }
 
 
         public void allDatabaseImageSaver(string path)
         {
 
-
-
-
-
-
-
-
-
-
-            // Voer een select-query uit om alle studenten uit te lezen
             Database.Query = "SELECT pictureID,onlineStorage FROM Picture";
             Database.OpenConnection();
 
-            // De resultaten worden nu opgeslagen in een "reader": deze wordt in de while-loop
-            // verderop gebruikt om nieuwe instanties van studenten aan te maken
             SQLiteDataReader reader = Database.Command.ExecuteReader();
 
-            
+
             while (reader.Read())
             {
                 string tempPicID = Convert.ToString(reader["pictureID"]);
                 string tempOnlineStorage = Convert.ToString(reader["onlineStorage"]);
 
                 System.Drawing.Image tempImage = Base64ToImage(tempOnlineStorage);
-                
+
                 SaveFileDialog s = new SaveFileDialog();
+                if (!File.Exists(path + tempPicID))
+                {
 
+                    System.IO.FileStream fstream = new System.IO.FileStream(path + tempPicID, System.IO.FileMode.Create);
+                    tempImage.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    fstream.Close();
 
-                System.IO.FileStream fstream = new System.IO.FileStream(path+tempPicID, System.IO.FileMode.Create);
-                tempImage.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                fstream.Close(); 
-                
-
+                }
             }
 
             Database.CloseConnection();
-
-
-
-
-                ////p stands for person and i stands for image 
-                //string fileStorage = "D:\\P" + personID + "I" + counterString + ".Jpeg";
-                //s.FileName = fileStorage;// Default file name
-
-                ////remove directory from the filename
-                //string filename = s.FileName;
-                //string[] temperaryFilenameArray = filename.Split('\\');
-                //filename = temperaryFilenameArray[temperaryFilenameArray.Length - 1];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
 
