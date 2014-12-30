@@ -201,7 +201,7 @@ namespace ProftaakOefening
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 string selectedPath = folderBrowserDialog1.SelectedPath;
-
+                saver.allDatabaseImageSaver(selectedPath);
                 
             }
         }

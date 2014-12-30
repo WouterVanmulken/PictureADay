@@ -16,17 +16,17 @@ namespace ProftaakOefening
         string counterString;
         string imageString;
 
-        
+
         //might need to check in folder to prevent overwritting
-        public  void SaveImageCapture(System.Drawing.Image image, int personID)
+        public void SaveImageCapture(System.Drawing.Image image, int personID)
         {
-            
-           
-            
+
+
+
             //getting the highest pictureCount
             SQLiteConnection connection = new SQLiteConnection("Data Source=" + Database.DatabaseFilename + ";Version=3");
 
-            string sql = "select count(*) from Picture where personID=\"" + personID +  "\"";
+            string sql = "select count(*) from Picture where personID=\"" + personID + "\"";
             SQLiteCommand command = new SQLiteCommand(sql, connection);
 
             connection.Open();
@@ -62,19 +62,19 @@ namespace ProftaakOefening
 
             //converting the image to a string
             imageString = ImageToBase64(image, System.Drawing.Imaging.ImageFormat.Jpeg);
-            
+
 
             //saving to file
             SaveFileDialog s = new SaveFileDialog();
 
             //p stands for person and i stands for image 
-            string fileStorage = "D:\\P" + personID + "I" +counterString + ".Jpeg";
+            string fileStorage = "D:\\P" + personID + "I" + counterString + ".Jpeg";
             s.FileName = fileStorage;// Default file name
 
             //remove directory from the filename
-            string filename = s.FileName;            
+            string filename = s.FileName;
             string[] temperaryFilenameArray = filename.Split('\\');
-            filename=temperaryFilenameArray[temperaryFilenameArray.Length-1];
+            filename = temperaryFilenameArray[temperaryFilenameArray.Length - 1];
 
             System.IO.FileStream fstream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
             image.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -82,7 +82,7 @@ namespace ProftaakOefening
 
 
             //saving to database
-            Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "'" + ", '" + DateTime.Today   + "'" + ", '" + imageString + "'" + ", '" + fileStorage  + "')";
+            Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "'" + ", '" + DateTime.Today + "'" + ", '" + imageString + "'" + ", '" + fileStorage + "')";
             Database.OpenConnection();
 
             bool success = false;
@@ -108,6 +108,86 @@ namespace ProftaakOefening
         }
 
 
+        public void allDatabaseImageSaver(string path)
+        {
+
+
+
+
+
+
+
+
+
+
+            // Voer een select-query uit om alle studenten uit te lezen
+            Database.Query = "SELECT pictureID,onlineStorage FROM Picture";
+            Database.OpenConnection();
+
+            // De resultaten worden nu opgeslagen in een "reader": deze wordt in de while-loop
+            // verderop gebruikt om nieuwe instanties van studenten aan te maken
+            SQLiteDataReader reader = Database.Command.ExecuteReader();
+
+            
+            while (reader.Read())
+            {
+                string tempPicID = Convert.ToString(reader["pictureID"]);
+                string tempOnlineStorage = Convert.ToString(reader["onlineStorage"]);
+
+                System.Drawing.Image tempImage = Base64ToImage(tempOnlineStorage);
+                
+                SaveFileDialog s = new SaveFileDialog();
+
+
+                System.IO.FileStream fstream = new System.IO.FileStream(path+tempPicID, System.IO.FileMode.Create);
+                tempImage.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                fstream.Close(); 
+                
+
+            }
+
+            Database.CloseConnection();
+
+
+
+
+                ////p stands for person and i stands for image 
+                //string fileStorage = "D:\\P" + personID + "I" + counterString + ".Jpeg";
+                //s.FileName = fileStorage;// Default file name
+
+                ////remove directory from the filename
+                //string filename = s.FileName;
+                //string[] temperaryFilenameArray = filename.Split('\\');
+                //filename = temperaryFilenameArray[temperaryFilenameArray.Length - 1];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
         //these two classes are used to encode a image to a string and a string to a image
         public string ImageToBase64(Image image,
             System.Drawing.Imaging.ImageFormat format)
@@ -117,7 +197,7 @@ namespace ProftaakOefening
                 // Convert Image to byte[]
                 image.Save(ms, format);
                 byte[] imageBytes = ms.ToArray();
-                
+
                 // Convert byte[] to Base64 String
                 string base64String = Convert.ToBase64String(imageBytes);
                 return base64String;
