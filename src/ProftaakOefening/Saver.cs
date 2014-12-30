@@ -69,9 +69,13 @@ namespace ProftaakOefening
 
             //p stands for person and i stands for image 
             string fileStorage = "D:\\P" + personID + "I" +counterString + ".Jpeg";
-            s.FileName = (fileStorage);// Default file name
-            
-            string filename = s.FileName;
+            s.FileName = fileStorage;// Default file name
+
+            //remove directory from the filename
+            string filename = s.FileName;            
+            string[] temperaryFilenameArray = filename.Split('\\');
+            filename=temperaryFilenameArray[temperaryFilenameArray.Length-1];
+
             System.IO.FileStream fstream = new System.IO.FileStream(filename, System.IO.FileMode.Create);
             image.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
             fstream.Close();
