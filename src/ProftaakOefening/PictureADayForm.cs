@@ -48,14 +48,22 @@ namespace ProftaakOefening
         }
         private void Save_click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image != null)
+            int temperaryPersonIDHolder;
+            using (SavePersonPicker pp = new SavePersonPicker())
             {
-                pictureBox2.Image = pictureBox1.Image;
-                Saver savefile = new Saver();
-                savefile.SaveImageCapture(pictureBox1.Image, 1);
-            }
-            else { MessageBox.Show("No image to save"); }
+                if (pp.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    temperaryPersonIDHolder = pp.personSelected;
 
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox2.Image = pictureBox1.Image;
+                        Saver savefile = new Saver();
+                        savefile.SaveImageCapture(pictureBox1.Image, temperaryPersonIDHolder);
+                    }
+                    else { MessageBox.Show("No image to save"); }
+                }
+            }
         }
         private void connectBtn_Click(object sender, EventArgs e)
         {
@@ -105,6 +113,7 @@ namespace ProftaakOefening
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             serialPort1.Close();
+            notifyIcon1.Visible = false;
         }
 
         //dit word gebruikt om te reageren op de arduino
@@ -171,7 +180,7 @@ namespace ProftaakOefening
 
             //Setting the Event handler for the camera
             manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
-
+            
         }
         void CurrentCamera_OnImageCaptured(object sender, CameraEventArgs e)
         {

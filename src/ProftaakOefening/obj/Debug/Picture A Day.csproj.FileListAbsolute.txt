@@ -19,3 +19,9 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefen
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\Picture A Day.csproj.GenerateResource.Cache
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.pdb
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe.manifest
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.application
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.TrustInfo.xml
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.exe.manifest
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.application
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.SavePersonPicker.resources
