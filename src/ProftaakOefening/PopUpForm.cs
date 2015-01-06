@@ -27,11 +27,11 @@ namespace ProftaakOefening
         {
 
              int nummer = 0;
-            if (tbName.Text.Length == 0)
+            if (tbName.Text.Length == 0 )
             {
                 MessageBox.Show("Please enter a valid Name");
             }
-            else if (!int.TryParse(tbAge.Text, out nummer))
+            else if (!int.TryParse(tbAge.Text, out nummer) && nummer<=130)
             {
                 MessageBox.Show("Please enter a valid Age");
             }
@@ -39,7 +39,7 @@ namespace ProftaakOefening
             {
                 MessageBox.Show("Please enter a valid Age");
             }
-            else if (cbGender.Text != "Male" || cbGender.Text!="Female")
+            else if (cbGender.Text != "Male" && cbGender.Text != "Female")
             {
                 MessageBox.Show("Please enter a valid Gender");
             }
@@ -50,6 +50,7 @@ namespace ProftaakOefening
                     PersonIdCounter++; 
                 }
             }
+            RefreshForm();
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)

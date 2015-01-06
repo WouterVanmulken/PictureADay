@@ -21,8 +21,6 @@ namespace ProftaakOefening
         public void SaveImageCapture(System.Drawing.Image image, int personID)
         {
 
-
-
             //getting the highest pictureCount
             SQLiteConnection connection = new SQLiteConnection("Data Source=" + Database.DatabaseFilename + ";Version=3");
 

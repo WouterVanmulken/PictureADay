@@ -117,15 +117,15 @@ namespace ProftaakOefening
                 Query = "CREATE TABLE Person (personID INT PRIMARY KEY, name VARCHAR(50), age INT, gender VARCHAR(6))";
                 Command.ExecuteNonQuery();
 
-                Query = "CREATE TABLE Picture (pictureID INT PRIMARY KEY, personID INT, Date VARCHAR(12), onlineStorage VARCHAR(500), localStorage VARCHAR(500))";
+                Query = "CREATE TABLE Picture (pictureID TEXT PRIMARY KEY, personID INT, Date VARCHAR(12), onlineStorage VARCHAR(500), localStorage VARCHAR(500))";
                 Command.ExecuteNonQuery();
 
-                // Voeg nieuwe rijen toe aan de database
-                Query = "INSERT INTO Person (personID, name, age, gender) values (01, 'Leon', 129, 'meel')";
-                Command.ExecuteNonQuery();
+                //// Voeg nieuwe rijen toe aan de database
+                //Query = "INSERT INTO Person (personID, name, age, gender) values (01, 'Leon', 129, 'meel')";
+                //Command.ExecuteNonQuery();
 
-                Query = "INSERT INTO Picture (pictureID, personID, date, onlineStorage, localStorage) values (0001, 01, '27-12-2014', 'www.google.com', 'c:Users/Leon/Pictures/engefoto.png')";
-                Command.ExecuteNonQuery();
+                //Query = "INSERT INTO Picture (pictureID, personID, date, onlineStorage, localStorage) values (0001, 01, '27-12-2014', 'www.google.com', 'c:Users/Leon/Pictures/engefoto.png')";
+                //Command.ExecuteNonQuery();
             }
             catch (SQLiteException)
             {

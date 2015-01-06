@@ -93,7 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arduino.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PictureADayForm.cs">

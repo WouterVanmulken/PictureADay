@@ -49,6 +49,7 @@ namespace ProftaakOefening
         private void Save_click(object sender, EventArgs e)
         {
             int temperaryPersonIDHolder;
+            Image tempImage = manager.CurrentCamera.GetCurrentImage();
             using (SavePersonPicker pp = new SavePersonPicker())
             {
                 if (pp.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -57,9 +58,9 @@ namespace ProftaakOefening
 
                     if (pictureBox1.Image != null)
                     {
-                        pictureBox2.Image = pictureBox1.Image;
+                        pictureBox2.Image = tempImage;
                         Saver savefile = new Saver();
-                        savefile.SaveImageCapture(pictureBox1.Image, temperaryPersonIDHolder);
+                        savefile.SaveImageCapture(tempImage, temperaryPersonIDHolder);
                     }
                     else { MessageBox.Show("No image to save"); }
                 }
@@ -177,7 +178,7 @@ namespace ProftaakOefening
         {
             //initializing the camera to be used based on the selection
             manager.CurrentCamera = (Camera)cbWebcams.SelectedItem;
-
+            
             //Setting the Event handler for the camera
             manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
             
