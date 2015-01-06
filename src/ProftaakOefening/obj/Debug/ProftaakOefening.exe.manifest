@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProftaakOefening.exe" size="1194968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProftaakOefening.exe" size="1194456">
       <assemblyIdentity name="ProftaakOefening" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8QzLlaO5HhkDFvYb2jr2L2xLP3Kes6G4l9HmX7B9PEo=</dsig:DigestValue>
+        <dsig:DigestValue>hVrVF5JwLSFoOrFUKKnzVO0z7SyMcDd3SkglEKfwQ3U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

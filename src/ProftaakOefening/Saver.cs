@@ -24,7 +24,7 @@ namespace ProftaakOefening
             //getting the highest pictureCount
             SQLiteConnection connection = new SQLiteConnection("Data Source=" + Database.DatabaseFilename + ";Version=3");
 
-            string sql = "select count(*) from Picture where personID=\"" + personID + "\"";
+            string sql = "select max(pictureIDCount) from Picture where personID=\"" + personID + "\"";
             SQLiteCommand command = new SQLiteCommand(sql, connection);
 
             connection.Open();
@@ -54,7 +54,7 @@ namespace ProftaakOefening
             {
                 counterString = Convert.ToString(counter);
             }
-            else { MessageBox.Show("Please use no more then 10000 pictures. This is a limitation because of the filename."); }
+            else { MessageBox.Show("Please use no more then 100000 pictures. This is a limitation because of the filename."); }
 
 
 
@@ -80,7 +80,7 @@ namespace ProftaakOefening
 
 
             //saving to database
-            Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "'" + ", '" + DateTime.Today + "'" + ", '" + imageString + "'" + ", '" + fileStorage + "')";
+            Database.Query = "INSERT INTO Picture (pictureID, personID, pictureIDCount, Date, onlineStorage, localStorage) values ('" + filename + "', '" + personID + "', " + counter + ", '" + DateTime.Today + "', '" + imageString + "', '" + fileStorage + "')";
             Database.OpenConnection();
 
 

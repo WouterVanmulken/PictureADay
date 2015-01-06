@@ -28,3 +28,16 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefen
 D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.exe
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
+D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.exe.manifest
+D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.application
+D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.exe
+D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.pdb
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\Picture A Day.csprojResolveAssemblyReference.cache
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.PopUpForm.resources
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.Properties.Resources.resources
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.SavePersonPicker.resources
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\Picture A Day.csproj.GenerateResource.Cache
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.TrustInfo.xml
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.exe.manifest
+D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.application
