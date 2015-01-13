@@ -3,59 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Data.SQLite;
 
 namespace ProftaakOefening
 {
-    class Person
-    {
-
-         //fields heten deze dingen toch
+    class Picture
+    {//////////////////////////////////////////////////////////////fuck deze nederlandse shit
+        //Fields
+        private string pictureID;
         private int personID;
-        private string name;
-        private int age;
-        private string gender;
+        private string date;
+        private string online;
+        private string local;
 
-        //maak dingetje aan
-        public Person(int personID, string name, int age, string gender)
+        public Picture(string pictureID, int personID, string date, string online, string local)
         {
+            this.pictureID = pictureID;
             this.personID = personID;
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
+            this.date = date;
+            this.online = online;
+            this.local = local;
         }
 
-        public static List<Person> Laden()
+        public static List<Picture> Laden(Person persoon)
         {
             // Voer een select-query uit om alle studenten uit te lezen
-            Database.Query = "SELECT * FROM Person";
+            int _personID = persoon.PersonID - 1;
+            Database.Query = "SELECT * FROM Picture WHERE personID =" + _personID;
             Database.OpenConnection();
 
             // De reader is een while loop die alle queries een voor een doorloopt
             SQLiteDataReader reader = Database.Command.ExecuteReader();
 
             // nieuwe lijst maken die alle personen gaat laten zien
-            List<Person> personen = new List<Person>();
+            List<Picture> pictures = new List<Picture>();
             while (reader.Read())
             {
+                                         
                 //alle personen pakken
-                personen.Add(new Person(Convert.ToInt32(reader["personID"]),
-                                         Convert.ToString(reader["name"]),
-                                         Convert.ToInt32(reader["age"]),
-                                         Convert.ToString(reader["gender"])
+                pictures.Add(new Picture(Convert.ToString(reader["pictureID"]),
+                                         Convert.ToInt32(reader["personID"]),
+                                         Convert.ToString(reader["Date"]),
+                                         Convert.ToString(reader["onlineStorage"]),
+                                         Convert.ToString(reader["localStorage"])
                                          ));
             }
 
             Database.CloseConnection();
 
             //return lijst personen
-            return personen;
+            return pictures;
         }
 
-        public static bool VoegToe(int personID, string name, int age, string gender)
+        public static bool VoegToe(int fotoID, Person persoon, string datum, string online, string lokaal)
         {
             // Bouw de insert-query op met de gegeven informatie
-            Database.Query = "INSERT INTO Person (personID, name, age, gender) values (" + personID + ", '" + name + "'" +", " + age + ", '" + gender + "')";
+            Database.Query = "INSERT INTO Picture (pictureID, personID, Date, onlineStorage, localStorage) values (" + fotoID + ", " + persoon.PersonID + ", '" + datum + "', '" + online + "', '" + lokaal + "')";
             Database.OpenConnection();
 
             bool success = false;
@@ -80,10 +84,10 @@ namespace ProftaakOefening
             return success;
         }
 
-        public static void Verwijder(Person person)
+        public static void Verwijder(Picture picture)
         {
             // Bouw de query op om de gegeven student te verwijderen
-            Database.Query = "DELETE FROM Person WHERE personID=" + person.personID;
+            Database.Query = "DELETE FROM Picture WHERE pictureID=\"" + picture.pictureID + "\"";
             Database.OpenConnection();
 
             // Foutafhandling is hier achterwege gelaten: gaat er iets mis, probeer dan de
@@ -97,18 +101,7 @@ namespace ProftaakOefening
 
         public override string ToString()
         {
-            return personID + " - " + name + ", " + age + " years old, " + gender + ".";
-        }
-        public int PersonID   // the Name property
-        {
-            get
-            {
-                return personID;
-            }
-            set 
-            {
-                personID  = value; 
-            }
+            return pictureID + " - " + date + "local storage : " + local;
         }
     }
 }

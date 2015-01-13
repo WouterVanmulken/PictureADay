@@ -10,7 +10,15 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.Ports;
 
+using System.Data.SQLite;
+
 using TouchlessLib;
+using NUnit.Framework;
+using DirectShowLib;
+using Splicer.Timeline;
+using Splicer.Renderer;
+using Splicer.Utilities;
+using Splicer.WindowsMedia;
 
 namespace ProftaakOefening
 {
@@ -20,6 +28,7 @@ namespace ProftaakOefening
         TouchlessMgr manager;
         Saver saver = new Saver();
         List<Person> people = new List<Person>();
+        
 
         public PictureADayForm()
         {
@@ -36,15 +45,17 @@ namespace ProftaakOefening
             {
                 cbWebcams.Items.Add(item);
             }
-            cbWebcams.SelectedIndex = 0;
+            if (cbWebcams.Items.Count != 0) { cbWebcams.SelectedIndex = 0; }
 
             //add comports and connects it
             rescanBtn_Click(null, null);
-            if (serialPortSelectionBox.Items.Count != 0) { serialPortSelectionBox.SelectedIndex = 0; }//connectBtn_Click(null, null); MessageBox.Show("Connection to arduino has been established"); }
-            else { MessageBox.Show("No connected devices found."); }
+            if (serialPortSelectionBox.Items.Count != 0) { serialPortSelectionBox.SelectedIndex = 0; }
+            else { }//listBox1.Items.Add(DateTime.Now + ": No Connected devices found");}
 
             serialPort1.BaudRate = 9600;
             serialPort1.NewLine = "#";
+
+            cbResolution.SelectedIndex = 0;
         }
         private void Save_click(object sender, EventArgs e)
         {
@@ -62,7 +73,7 @@ namespace ProftaakOefening
                         Saver savefile = new Saver();
                         savefile.SaveImageCapture(tempImage, temperaryPersonIDHolder);
                     }
-                    else { MessageBox.Show("No image to save"); }
+                    else { }//listBox1.Items.Add(DateTime.Now + ": No image to save.");}
                 }
             }
         }
@@ -93,7 +104,8 @@ namespace ProftaakOefening
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("Could not connect to the given serial port: " + exception.Message);
+                    richTextBox1.AppendText("\n" + DateTime.Now + ": Could not connect to the given serial port: " + exception.Message);
+                    
                 }
             }
 
@@ -168,7 +180,7 @@ namespace ProftaakOefening
                 if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
                     string selectedPath = folderBrowserDialog1.SelectedPath;
-                    saver.allDatabaseImageSaver(selectedPath);
+                    if (!saver.allDatabaseImageSaver(selectedPath)) { richTextBox1.AppendText("\n" + DateTime.Now + "Something went wrong"); }
 
                 }
             }
@@ -181,6 +193,9 @@ namespace ProftaakOefening
             
             //Setting the Event handler for the camera
             manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
+
+            manager.CurrentCamera.CaptureHeight = 600;
+            manager.CurrentCamera.CaptureWidth = 800;
             
         }
         void CurrentCamera_OnImageCaptured(object sender, CameraEventArgs e)
@@ -189,7 +204,30 @@ namespace ProftaakOefening
             pictureBox1.Image = manager.CurrentCamera.GetCurrentImage();
         }
 
+        private void rescanCamBtn_Click(object sender, EventArgs e)
+        {
+            cbWebcams.Items.Clear();
+            foreach (Camera item in manager.Cameras)
+            {
+                cbWebcams.Items.Add(item);
+            }
+        }
 
+        private void imageToVideoBtn_Click(object sender, EventArgs e)
+        {
+
+
+            //add this shozzla
+
+        }
+
+        private void cbResolution_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbResolution.SelectedItem.ToString().Split();
+            string[] _resolution = cbResolution.SelectedItem.ToString().Split('x');
+            manager.CurrentCamera.CaptureWidth = Convert.ToInt32(_resolution[0]);
+            manager.CurrentCamera.CaptureHeight = Convert.ToInt32(_resolution[1]);
+        }
     }
 }
 

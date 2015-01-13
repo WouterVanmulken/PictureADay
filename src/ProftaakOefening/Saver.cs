@@ -102,35 +102,38 @@ namespace ProftaakOefening
         }
 
 
-        public void allDatabaseImageSaver(string path)
+        public bool allDatabaseImageSaver(string path)
         {
-
-            Database.Query = "SELECT pictureID,onlineStorage FROM Picture";
-            Database.OpenConnection();
-
-            SQLiteDataReader reader = Database.Command.ExecuteReader();
-
-
-            while (reader.Read())
+            try
             {
-                string tempPicID = Convert.ToString(reader["pictureID"]);
-                string tempOnlineStorage = Convert.ToString(reader["onlineStorage"]);
+                Database.Query = "SELECT pictureID,onlineStorage FROM Picture";
+                Database.OpenConnection();
 
-                System.Drawing.Image tempImage = Base64ToImage(tempOnlineStorage);
+                SQLiteDataReader reader = Database.Command.ExecuteReader();
 
-                SaveFileDialog s = new SaveFileDialog();
-                if (!File.Exists(path + tempPicID))
+
+                while (reader.Read())
                 {
+                    string tempPicID = Convert.ToString(reader["pictureID"]);
+                    string tempOnlineStorage = Convert.ToString(reader["onlineStorage"]);
 
-                    System.IO.FileStream fstream = new System.IO.FileStream(path + tempPicID, System.IO.FileMode.Create);
-                    tempImage.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    fstream.Close();
+                    System.Drawing.Image tempImage = Base64ToImage(tempOnlineStorage);
 
+                    SaveFileDialog s = new SaveFileDialog();
+                    if (!File.Exists(path + tempPicID))
+                    {
+
+                        System.IO.FileStream fstream = new System.IO.FileStream(path + tempPicID, System.IO.FileMode.Create);
+                        tempImage.Save(fstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        fstream.Close();
+
+                    }
                 }
+
+                Database.CloseConnection();
+                return true;
             }
-
-            Database.CloseConnection();
-
+            catch (Exception e) { return false; }
         }
 
 

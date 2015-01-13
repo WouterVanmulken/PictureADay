@@ -26,6 +26,7 @@ namespace ProftaakOefening
                 listBox1.Items.Add(persoon);
             }
             groupBox1.Text = "People :" + listBox1.Items.Count;
+            if (listBox1.Items.Count != -1) { listBox1.SetSelected(0, true); }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

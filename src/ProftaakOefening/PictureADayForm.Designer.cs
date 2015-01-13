@@ -38,6 +38,7 @@
             this.connectBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rescanCamBtn = new System.Windows.Forms.Button();
             this.cbWebcams = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.aanpassenBtn = new System.Windows.Forms.Button();
@@ -47,19 +48,26 @@
             this.getImagesFromDatabase = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.imageToVideoBtn = new System.Windows.Forms.Button();
+            this.cbResolution = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(637, 459);
+            this.pictureBox1.Size = new System.Drawing.Size(637, 509);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -117,7 +125,7 @@
             this.groupBox1.Controls.Add(this.connectBtn);
             this.groupBox1.Controls.Add(this.rescanBtn);
             this.groupBox1.Controls.Add(this.serialPortSelectionBox);
-            this.groupBox1.Location = new System.Drawing.Point(657, 388);
+            this.groupBox1.Location = new System.Drawing.Point(655, 438);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 82);
             this.groupBox1.TabIndex = 12;
@@ -126,14 +134,25 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rescanCamBtn);
             this.groupBox2.Controls.Add(this.cbWebcams);
             this.groupBox2.Controls.Add(this.saveBtn);
-            this.groupBox2.Location = new System.Drawing.Point(655, 331);
+            this.groupBox2.Location = new System.Drawing.Point(655, 352);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(243, 51);
+            this.groupBox2.Size = new System.Drawing.Size(243, 80);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Camera Controls";
+            // 
+            // rescanCamBtn
+            // 
+            this.rescanCamBtn.Location = new System.Drawing.Point(6, 49);
+            this.rescanCamBtn.Name = "rescanCamBtn";
+            this.rescanCamBtn.Size = new System.Drawing.Size(235, 25);
+            this.rescanCamBtn.TabIndex = 8;
+            this.rescanCamBtn.Text = "Rescan camera\'s";
+            this.rescanCamBtn.UseVisualStyleBackColor = true;
+            this.rescanCamBtn.Click += new System.EventHandler(this.rescanCamBtn_Click);
             // 
             // cbWebcams
             // 
@@ -147,7 +166,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.aanpassenBtn);
-            this.groupBox3.Location = new System.Drawing.Point(658, 276);
+            this.groupBox3.Location = new System.Drawing.Point(655, 296);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(121, 50);
             this.groupBox3.TabIndex = 14;
@@ -178,7 +197,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.getImagesFromDatabase);
-            this.groupBox4.Location = new System.Drawing.Point(785, 246);
+            this.groupBox4.Location = new System.Drawing.Point(785, 267);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(113, 79);
             this.groupBox4.TabIndex = 15;
@@ -195,11 +214,64 @@
             this.getImagesFromDatabase.UseVisualStyleBackColor = true;
             this.getImagesFromDatabase.Click += new System.EventHandler(this.getImagesFromDatabase_Click);
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(13, 526);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(884, 50);
+            this.richTextBox1.TabIndex = 16;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.imageToVideoBtn);
+            this.groupBox5.Location = new System.Drawing.Point(655, 247);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(121, 43);
+            this.groupBox5.TabIndex = 17;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Set to video";
+            // 
+            // imageToVideoBtn
+            // 
+            this.imageToVideoBtn.Location = new System.Drawing.Point(6, 14);
+            this.imageToVideoBtn.Name = "imageToVideoBtn";
+            this.imageToVideoBtn.Size = new System.Drawing.Size(106, 23);
+            this.imageToVideoBtn.TabIndex = 0;
+            this.imageToVideoBtn.Text = "image to video";
+            this.imageToVideoBtn.UseVisualStyleBackColor = true;
+            this.imageToVideoBtn.Click += new System.EventHandler(this.imageToVideoBtn_Click);
+            // 
+            // cbResolution
+            // 
+            this.cbResolution.FormattingEnabled = true;
+            this.cbResolution.Items.AddRange(new object[] {
+            "800 x 600"});
+            this.cbResolution.Location = new System.Drawing.Point(6, 18);
+            this.cbResolution.Name = "cbResolution";
+            this.cbResolution.Size = new System.Drawing.Size(102, 21);
+            this.cbResolution.TabIndex = 18;
+            this.cbResolution.SelectedIndexChanged += new System.EventHandler(this.cbResolution_SelectedIndexChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.cbResolution);
+            this.groupBox6.Location = new System.Drawing.Point(782, 222);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(114, 45);
+            this.groupBox6.TabIndex = 19;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Resolution";
+            // 
             // PictureADayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 476);
+            this.ClientSize = new System.Drawing.Size(910, 588);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -217,6 +289,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,8 +312,14 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button getImagesFromDatabase;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cbWebcams;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button rescanCamBtn;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button imageToVideoBtn;
+        private System.Windows.Forms.ComboBox cbResolution;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }
 
