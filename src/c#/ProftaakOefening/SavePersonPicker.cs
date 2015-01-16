@@ -32,7 +32,7 @@ namespace ProftaakOefening
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             personSelected = listBox1.SelectedIndex;
-            string [] splitter =listBox1.GetItemText(personSelected).Split('0');
+            string [] splitter =listBox1.GetItemText(personSelected).Split(' ');
             Int32.TryParse(splitter[0], out personSelected);
         }
     }

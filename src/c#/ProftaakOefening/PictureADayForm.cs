@@ -28,7 +28,7 @@ namespace ProftaakOefening
         TouchlessMgr manager;
         Saver saver = new Saver();
         List<Person> people = new List<Person>();
-        
+
 
         public PictureADayForm()
         {
@@ -105,7 +105,7 @@ namespace ProftaakOefening
                 catch (Exception exception)
                 {
                     richTextBox1.AppendText("\n" + DateTime.Now + ": Could not connect to the given serial port: " + exception.Message);
-                    
+
                 }
             }
 
@@ -144,7 +144,7 @@ namespace ProftaakOefening
                 Saver serialSaver = new Saver();
                 serialSaver.SaveImageCapture(tempImage, tempNumber);
             }
-            catch (Exception exception){ }
+            catch (Exception exception) { }
         }
 
         private void changeDataBtn_Click(object sender, EventArgs e)
@@ -190,13 +190,13 @@ namespace ProftaakOefening
         {
             //initializing the camera to be used based on the selection
             manager.CurrentCamera = (Camera)cbWebcams.SelectedItem;
-            
+
             //Setting the Event handler for the camera
             manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
 
             manager.CurrentCamera.CaptureHeight = 600;
             manager.CurrentCamera.CaptureWidth = 800;
-            
+
         }
         void CurrentCamera_OnImageCaptured(object sender, CameraEventArgs e)
         {
@@ -213,20 +213,35 @@ namespace ProftaakOefening
             }
         }
 
+
+        private void cbResolution_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbWebcams.Items.Count != 0)
+            {
+                cbResolution.SelectedItem.ToString().Split();
+                string[] _resolution = cbResolution.SelectedItem.ToString().Split('x');
+                manager.CurrentCamera.CaptureWidth = Convert.ToInt32(_resolution[0]);
+                manager.CurrentCamera.CaptureHeight = Convert.ToInt32(_resolution[1]);
+            }
+        }
+
         private void imageToVideoBtn_Click(object sender, EventArgs e)
         {
 
 
-            //add this shozzla
+            using (VideoControls pp = new VideoControls())
+            {
+                if (pp.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
 
-        }
+                }
+            }
 
-        private void cbResolution_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cbResolution.SelectedItem.ToString().Split();
-            string[] _resolution = cbResolution.SelectedItem.ToString().Split('x');
-            manager.CurrentCamera.CaptureWidth = Convert.ToInt32(_resolution[0]);
-            manager.CurrentCamera.CaptureHeight = Convert.ToInt32(_resolution[1]);
+
+
+
+
+
         }
     }
 }

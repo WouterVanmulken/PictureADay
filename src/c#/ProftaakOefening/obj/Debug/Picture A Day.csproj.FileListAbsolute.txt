@@ -41,3 +41,7 @@ D:\Github\picture a day\src\ProftaakOefening\obj\Debug\Picture A Day.csproj.Gene
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.TrustInfo.xml
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.exe.manifest
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.application
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.VideoControls.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.exe
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.pdb

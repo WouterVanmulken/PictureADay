@@ -28,7 +28,12 @@ namespace ProftaakOefening
             SQLiteCommand command = new SQLiteCommand(sql, connection);
 
             connection.Open();
-            counter = Convert.ToInt32(command.ExecuteScalar());
+            if (command.ExecuteScalar() != DBNull.Value)
+            {
+                counter = Convert.ToInt32(command.ExecuteScalar());
+            }
+            else { counter = 0; }
+            
             counter++;      //since you don't want to overwride the previous image
             connection.Close();
 

@@ -59,7 +59,7 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(18, 505);
+            this.addBtn.Location = new System.Drawing.Point(18, 513);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(159, 23);
             this.addBtn.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(199, 505);
+            this.deleteBtn.Location = new System.Drawing.Point(199, 513);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(142, 23);
             this.deleteBtn.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             // deletePictureBtn
             // 
-            this.deletePictureBtn.Location = new System.Drawing.Point(18, 476);
+            this.deletePictureBtn.Location = new System.Drawing.Point(18, 484);
             this.deletePictureBtn.Name = "deletePictureBtn";
             this.deletePictureBtn.Size = new System.Drawing.Size(323, 23);
             this.deletePictureBtn.TabIndex = 11;
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 537);
+            this.ClientSize = new System.Drawing.Size(372, 548);
             this.Controls.Add(this.deletePictureBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

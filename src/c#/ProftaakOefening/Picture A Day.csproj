@@ -129,6 +129,13 @@
       <DependentUpon>SavePersonPicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Saver.cs" />
+    <Compile Include="Video.cs" />
+    <Compile Include="VideoControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoControls.Designer.cs">
+      <DependentUpon>VideoControls.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PictureADayForm.resx">
       <DependentUpon>PictureADayForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="SavePersonPicker.resx">
       <DependentUpon>SavePersonPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoControls.resx">
+      <DependentUpon>VideoControls.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Picture A Day_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
