@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>PictureADayIcon.ico</ApplicationIcon>
+    <ApplicationIcon>ApictureadayBackgroundless.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F51025CF008830648C8117F0F1CC6DF985DCC417</ManifestCertificateThumbprint>
@@ -173,6 +173,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApictureadayBackgroundless.ico" />
     <Content Include="PictureADayIcon.ico" />
   </ItemGroup>
   <ItemGroup>

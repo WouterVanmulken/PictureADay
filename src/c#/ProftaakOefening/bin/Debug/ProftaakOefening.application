@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ProftaakOefening.exe.manifest" size="8694">
+    <dependentAssembly dependencyType="install" codebase="ProftaakOefening.exe.manifest" size="9112">
       <assemblyIdentity name="ProftaakOefening.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nz0sHUgIVDVyJzOwqLdP2VVYpA42TIBxStmdFEyEdcY=</dsig:DigestValue>
+        <dsig:DigestValue>pZfTd7FdwtnLtWi7cUNN+To+1wQYcdq2qh//RqJmK84=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

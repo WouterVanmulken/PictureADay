@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="ProftaakOefening.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="PictureADayIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="ApictureadayBackgroundless.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ProftaakOefening" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProftaakOefening.exe" size="1204696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProftaakOefening.exe" size="346584">
       <assemblyIdentity name="ProftaakOefening" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wpktB73MyhF8TdDAT2x0hKc3J01/Xq2Np/fYjOuPxCQ=</dsig:DigestValue>
+        <dsig:DigestValue>p85Bl0jhXMhg+z2tfDDsStiDWNSHz0M1eF4lA2gpA1g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -114,13 +114,22 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="PictureADayIcon.ico" size="370070">
+  <file name="ApictureadayBackgroundless.ico" size="99678">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Sges5CTk9/1yEhZOF3YdHEP8ubzHdgfEz4VDXHfA4nw=</dsig:DigestValue>
+      <dsig:DigestValue>6ToxOUWHF+dxjilvZ1ZFBVj3J6S2GM0UqoWS2A1jjUA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PictureADayIcon.ico" size="99678">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MwKxQG2uOb2B+4WKnOJpKl+HTPNqUt7i5P3Mgk6kejk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="ProftaakOefening.exe.config" size="177">
