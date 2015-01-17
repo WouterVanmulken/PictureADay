@@ -9,21 +9,11 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\De
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.exe
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.exe
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.pdb
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\Picture A Day.csprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.PopUpForm.resources
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.Properties.Resources.resources
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\Picture A Day.csproj.GenerateResource.Cache
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.pdb
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.exe.manifest
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\ProftaakOefening.application
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.TrustInfo.xml
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.exe.manifest
-C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.application
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.SavePersonPicker.resources
 D:\Github\picture a day\src\ProftaakOefening\bin\Debug\ProftaakOefening.exe.config
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.exe
@@ -42,3 +32,13 @@ D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.TrustInf
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.exe.manifest
 D:\Github\picture a day\src\ProftaakOefening\obj\Debug\ProftaakOefening.application
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.VideoControls.resources
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\A Picture A Day.exe.config
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\A Picture A Day.exe.manifest
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\A Picture A Day.application
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\A Picture A Day.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\A Picture A Day.pdb
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.TrustInfo.xml
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.exe.manifest
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.application
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.exe
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.pdb
