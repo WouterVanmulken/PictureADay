@@ -94,18 +94,21 @@ namespace ProftaakOefening
 
         private void Ok_Click(object sender, EventArgs e)
         {
-
-
-            personSelected = listBox1.SelectedIndex;
-            string[] splitter = listBox1.GetItemText(personSelected).Split(' ');
-            Int32.TryParse(splitter[0], out personSelected);
-
-            if (!Directory.Exists(textBoxSavePath.Text)) { MessageBox.Show("Please use a valid directory to save"); }
+                            
+            if(personSelected==-1){MessageBox.Show("Please select a person/");}
+            if (!Directory.Exists(textBoxSavePath.Text)) 
+            { 
+                MessageBox.Show("Please use a valid directory to save"); 
+            }
             else if (!File.Exists(textBoxSound.Text))
             {
                 MessageBox.Show("please use a valid song");
             }
-            else { video.SaveVideo(textBoxSavePath.Text, textBoxSound.Text); this.DialogResult = DialogResult.OK; }
+            else {
+                personSelected = listBox1.SelectedIndex;
+                string[] splitter = listBox1.GetItemText(personSelected).Split(' ');
+                Int32.TryParse(splitter[0], out personSelected);
+                video.SaveVideo(textBoxSavePath.Text, textBoxSound.Text, personSelected.ToString()); this.DialogResult = DialogResult.OK; }
         }
 
     }

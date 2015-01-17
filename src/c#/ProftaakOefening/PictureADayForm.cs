@@ -144,7 +144,7 @@ namespace ProftaakOefening
                 Saver serialSaver = new Saver();
                 serialSaver.SaveImageCapture(tempImage, tempNumber);
             }
-            catch (Exception exception) { }
+            catch (Exception) { }
         }
 
         private void changeDataBtn_Click(object sender, EventArgs e)
@@ -193,11 +193,10 @@ namespace ProftaakOefening
 
             //Setting the Event handler for the camera
             manager.CurrentCamera.OnImageCaptured += new EventHandler<CameraEventArgs>(CurrentCamera_OnImageCaptured);
-
-            manager.CurrentCamera.CaptureHeight = 600;
-            manager.CurrentCamera.CaptureWidth = 800;
+            //cbResolution_SelectedIndexChanged(null,null);
 
         }
+
         void CurrentCamera_OnImageCaptured(object sender, CameraEventArgs e)
         {
             //Giving the feed of the camera to the picturepox
@@ -206,6 +205,7 @@ namespace ProftaakOefening
 
         private void rescanCamBtn_Click(object sender, EventArgs e)
         {
+            manager = new TouchlessMgr();
             cbWebcams.Items.Clear();
             foreach (Camera item in manager.Cameras)
             {

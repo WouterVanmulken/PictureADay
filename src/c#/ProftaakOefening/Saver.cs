@@ -138,7 +138,7 @@ namespace ProftaakOefening
                 Database.CloseConnection();
                 return true;
             }
-            catch (Exception e) { return false; }
+            catch (Exception) { return false; }
         }
 
 

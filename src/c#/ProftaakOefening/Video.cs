@@ -25,7 +25,7 @@ namespace ProftaakOefening
 {
     class Video
     {
-        public void SaveVideo(string outputFilePath, string soundFragment)
+        public void SaveVideo(string outputFilePath, string soundFragment, string personSelected)
         {
             // generates a little slide-show, with audio track and fades between images.            
 
@@ -52,6 +52,8 @@ namespace ProftaakOefening
                       // add some audio
                       ITrack audioTrack = timeline.AddAudioGroup().AddTrack();
                       IClip audio = audioTrack.AddAudio(soundFragment, 0, videoTrack.Duration);
+
+
 
                     // render our slideshow out to a windows media file
                     IRenderer renderer = new WindowsMediaRenderer(timeline, outputFilePath + "\\test.wmv", WindowsMediaProfiles.HighQualityVideo);

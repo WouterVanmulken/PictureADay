@@ -68,9 +68,7 @@ namespace ProftaakOefening
             catch (SQLiteException e)
             {
                 // Code 19 geeft aan dat een veld wat uniek moet zijn in de database, dit door
-                // deze insert niet meer zou zijn. Het is dus niet toegevoegd. Aangezien in deze
-                // applicatie deze constraint alleen op het studentnummer staat, kunnen we de
-                // foutmelding heel specifiek weergeven.
+                // deze insert niet meer zou zijn. Het is dus niet toegevoegd.
                 if (e.ErrorCode == 19)
                 {
                 }
@@ -86,10 +84,6 @@ namespace ProftaakOefening
             Database.Query = "DELETE FROM Person WHERE personID=" + person.personID;
             Database.OpenConnection();
 
-            // Foutafhandling is hier achterwege gelaten: gaat er iets mis, probeer dan de
-            // onderliggende reden te vinden en deze op te lossen. ExecuteScalar wordt
-            // gebruikt als we willen weten hoeveel records in de database zijn aangepast
-            // door de query die we uitgevoerd hebben.
             Database.Command.ExecuteScalar();
 
             Database.CloseConnection();
