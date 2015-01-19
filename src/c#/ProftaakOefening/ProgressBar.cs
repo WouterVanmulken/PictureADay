@@ -21,6 +21,7 @@ namespace ProftaakOefening
         private void timer1_Tick(object sender, EventArgs e)
         {
             progressBar1.Value = progresvariables.progres;
+            label3.Text = progresvariables.progres.ToString();
             if (progressBar1.Value == 100) { this.DialogResult = DialogResult.OK; }
         }
     }

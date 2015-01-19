@@ -67,9 +67,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(215, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(13, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "100";
+            this.label3.Text = "0";
             // 
             // timer1
             // 
