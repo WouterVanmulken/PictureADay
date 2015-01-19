@@ -108,7 +108,10 @@ namespace ProftaakOefening
                 personSelected = listBox1.SelectedIndex;
                 string[] splitter = listBox1.GetItemText(personSelected).Split(' ');
                 Int32.TryParse(splitter[0], out personSelected);
-                video.SaveVideo(textBoxSavePath.Text, textBoxSound.Text, personSelected.ToString()); this.DialogResult = DialogResult.OK; }
+                this.Visible = false;
+                video.SaveVideo(textBoxSavePath.Text, textBoxSound.Text, personSelected.ToString());
+                
+                this.DialogResult = DialogResult.OK; }
         }
 
     }

@@ -87,8 +87,9 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.92.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -106,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="ProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Picture.cs" />
     <Compile Include="PictureADayForm.cs">
@@ -141,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PopUpForm.resx">
       <DependentUpon>PopUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBar.resx">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

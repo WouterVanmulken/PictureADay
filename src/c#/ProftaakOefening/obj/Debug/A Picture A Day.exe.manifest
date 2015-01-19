@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="A Picture A Day.exe" size="346584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="A Picture A Day.exe" size="349144">
       <assemblyIdentity name="A Picture A Day" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BVKsE7JNNadpz5uFfStT79S6Iq915wJ9zt6+6Aoc1bI=</dsig:DigestValue>
+        <dsig:DigestValue>jR+D0fyuGJC7965z/Bg54PM7EZ3ZJGZCQmiSdo5UCzo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="282624">
-      <assemblyIdentity name="System.Data.SQLite" version="1.0.94.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="1016320">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.92.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V1MegnjKM/oUxvYx7fSeXwg/3TlV7/GoFwjHyiZs4Ww=</dsig:DigestValue>
+        <dsig:DigestValue>F0dIihUVBZKwyStSiNHQdMugg/zaQvCqsM3zwBssIz0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

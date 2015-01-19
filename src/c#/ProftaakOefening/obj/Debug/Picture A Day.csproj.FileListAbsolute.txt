@@ -42,3 +42,5 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefen
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.application
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.exe
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.pdb
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\System.Data.SQLite.dll
+C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.ProgressBar.resources

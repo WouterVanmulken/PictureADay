@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.IO.Ports;
+using System.Threading;
 
 using System.Data.SQLite;
 
@@ -129,23 +130,6 @@ namespace ProftaakOefening
             notifyIcon1.Visible = false;
         }
 
-        //dit word gebruikt om te reageren op de arduino
-        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            try
-            {
-                Image tempImage = manager.CurrentCamera.GetCurrentImage();
-                pictureBox2.Image = tempImage;
-
-                string serialData = serialPort1.ReadLine().ToString();
-                int tempNumber;
-                Int32.TryParse(serialData, out tempNumber);
-
-                Saver serialSaver = new Saver();
-                serialSaver.SaveImageCapture(tempImage, tempNumber);
-            }
-            catch (Exception) { }
-        }
 
         private void changeDataBtn_Click(object sender, EventArgs e)
         {
@@ -237,12 +221,47 @@ namespace ProftaakOefening
                 }
             }
 
-
-
-
-
-
         }
+        //dit word gebruikt om te reageren op de arduino
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try
+            {
+                Image tempImage = manager.CurrentCamera.GetCurrentImage();
+                pictureBox2.Image = tempImage;
+
+                string serialData = serialPort1.ReadLine().ToString();
+                int tempNumber;
+                Int32.TryParse(serialData, out tempNumber);
+
+                new ThreadedWorker(tempImage, tempNumber);
+                
+            }
+            catch (Exception) { }
+        
+        }
+    }
+    public class ThreadedWorker
+    {
+        int tempNumber;
+        Image image;
+        Thread t;
+
+        public ThreadedWorker(Image image, int tempNumber) 
+        {
+
+            this.tempNumber = tempNumber;
+            this.image = image;
+            t = new Thread(new ThreadStart(doWork));
+        
+        }
+        void doWork() 
+        {
+            Saver serialSaver = new Saver();
+            serialSaver.SaveImageCapture(image, tempNumber);
+        }
+    
+    
     }
 }
 
