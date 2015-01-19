@@ -253,6 +253,7 @@ namespace ProftaakOefening
             this.tempNumber = tempNumber;
             this.image = image;
             t = new Thread(new ThreadStart(doWork));
+            t.Start();
         
         }
         void doWork() 
