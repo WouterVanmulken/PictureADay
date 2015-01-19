@@ -62,7 +62,7 @@ namespace ProftaakOefening
                     var participant = new PercentageProgressParticipant(timeline);
                     participant.ProgressChanged += new EventHandler<Splicer.Renderer.ProgressChangedEventArgs>(participant_ProgressChanged);
 
-                    new ThreadedWorker2();
+                    new ThreadedWorker2(outputFilePath);
 
 
                     // render our slideshow out to a windows media file
@@ -85,9 +85,10 @@ namespace ProftaakOefening
     public class ThreadedWorker2
     {
         Thread t2;
-
-        public ThreadedWorker2()
+        string outputPath;
+        public ThreadedWorker2(string outputPath)
         {
+            this.outputPath = outputPath;
             t2 = new Thread(new ThreadStart(doWork2));
             t2.Start();
         }
@@ -99,6 +100,9 @@ namespace ProftaakOefening
                 {
 
                 }
+                
+                System.Diagnostics.Process.Start(@outputPath);
+                
             }
         }
 

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="A Picture A Day.exe" size="349144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="A Picture A Day.exe" size="349656">
       <assemblyIdentity name="A Picture A Day" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jR+D0fyuGJC7965z/Bg54PM7EZ3ZJGZCQmiSdo5UCzo=</dsig:DigestValue>
+        <dsig:DigestValue>2GhrydyfTSfzUKuFrfxMo9weNJPPDbGYP6G6kDXy9JI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
