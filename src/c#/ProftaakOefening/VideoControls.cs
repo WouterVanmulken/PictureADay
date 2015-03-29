@@ -74,19 +74,6 @@ namespace ProftaakOefening
             }
         }
 
-        private void browseSoundFileBtn_Click(object sender, EventArgs e)
-        {
-
-            openFileDialog1.Multiselect = false;
-            openFileDialog1.Filter = "Video File (*.wav)|*.wav";
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                textBoxSound.Text = openFileDialog1.FileName;
-
-            }
-        }
-
         private void fileSystemWatcher1_Changed(object sender, FileSystemEventArgs e)
         {
 
@@ -100,16 +87,12 @@ namespace ProftaakOefening
             { 
                 MessageBox.Show("Please use a valid directory to save"); 
             }
-            else if (!File.Exists(textBoxSound.Text))
-            {
-                MessageBox.Show("please use a valid song");
-            }
             else {
                 personSelected = listBox1.SelectedIndex;
                 string[] splitter = listBox1.GetItemText(personSelected).Split(' ');
                 Int32.TryParse(splitter[0], out personSelected);
                 this.Visible = false;
-                video.SaveVideo(textBoxSavePath.Text, textBoxSound.Text, personSelected.ToString());
+                video.SaveVideo(textBoxSavePath.Text, personSelected.ToString());
                 
                 this.DialogResult = DialogResult.OK; }
         }

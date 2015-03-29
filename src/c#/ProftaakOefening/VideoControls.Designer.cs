@@ -31,11 +31,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBoxSavePath = new System.Windows.Forms.TextBox();
-            this.textBoxSound = new System.Windows.Forms.TextBox();
             this.browseSavePathBtn = new System.Windows.Forms.Button();
-            this.browseSoundFileBtn = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.Ok = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -71,28 +68,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Save path";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 250);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sound file";
-            // 
             // textBoxSavePath
             // 
             this.textBoxSavePath.Location = new System.Drawing.Point(16, 224);
             this.textBoxSavePath.Name = "textBoxSavePath";
             this.textBoxSavePath.Size = new System.Drawing.Size(174, 20);
             this.textBoxSavePath.TabIndex = 4;
-            // 
-            // textBoxSound
-            // 
-            this.textBoxSound.Location = new System.Drawing.Point(16, 266);
-            this.textBoxSound.Name = "textBoxSound";
-            this.textBoxSound.Size = new System.Drawing.Size(174, 20);
-            this.textBoxSound.TabIndex = 5;
             // 
             // browseSavePathBtn
             // 
@@ -104,21 +85,11 @@
             this.browseSavePathBtn.UseVisualStyleBackColor = true;
             this.browseSavePathBtn.Click += new System.EventHandler(this.browseSavePathBtn_Click);
             // 
-            // browseSoundFileBtn
-            // 
-            this.browseSoundFileBtn.Location = new System.Drawing.Point(197, 266);
-            this.browseSoundFileBtn.Name = "browseSoundFileBtn";
-            this.browseSoundFileBtn.Size = new System.Drawing.Size(75, 23);
-            this.browseSoundFileBtn.TabIndex = 7;
-            this.browseSoundFileBtn.Text = "Browse..";
-            this.browseSoundFileBtn.UseVisualStyleBackColor = true;
-            this.browseSoundFileBtn.Click += new System.EventHandler(this.browseSoundFileBtn_Click);
-            // 
             // Ok
             // 
-            this.Ok.Location = new System.Drawing.Point(16, 301);
+            this.Ok.Location = new System.Drawing.Point(16, 269);
             this.Ok.Name = "Ok";
-            this.Ok.Size = new System.Drawing.Size(259, 23);
+            this.Ok.Size = new System.Drawing.Size(256, 23);
             this.Ok.TabIndex = 8;
             this.Ok.Text = "Convert";
             this.Ok.UseVisualStyleBackColor = true;
@@ -138,13 +109,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 334);
+            this.ClientSize = new System.Drawing.Size(280, 307);
             this.Controls.Add(this.Ok);
-            this.Controls.Add(this.browseSoundFileBtn);
             this.Controls.Add(this.browseSavePathBtn);
-            this.Controls.Add(this.textBoxSound);
             this.Controls.Add(this.textBoxSavePath);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "VideoControls";
@@ -162,11 +130,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxSavePath;
-        private System.Windows.Forms.TextBox textBoxSound;
         private System.Windows.Forms.Button browseSavePathBtn;
-        private System.Windows.Forms.Button browseSoundFileBtn;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button Ok;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

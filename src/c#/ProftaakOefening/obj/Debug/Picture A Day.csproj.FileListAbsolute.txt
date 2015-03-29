@@ -44,3 +44,22 @@ C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefen
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\A Picture A Day.pdb
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\bin\Debug\System.Data.SQLite.dll
 C:\Users\user\Desktop\proftaak oefening\ProftaakOefening2Touchless\ProftaakOefening\obj\Debug\ProftaakOefening.ProgressBar.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\A Picture A Day.exe.config
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\A Picture A Day.exe
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\A Picture A Day.pdb
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\A Picture A Day.exe.manifest
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\A Picture A Day.application
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\A Picture A Day.exe
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\A Picture A Day.pdb
+D:\Github\picture a day\src\c#\ProftaakOefening\bin\Debug\System.Data.SQLite.dll
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\Picture A Day.csprojResolveAssemblyReference.cache
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.PictureADayForm.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.PopUpForm.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.ProgressBar.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.Properties.Resources.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.SavePersonPicker.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\ProftaakOefening.VideoControls.resources
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\Picture A Day.csproj.GenerateResource.Cache
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\A Picture A Day.TrustInfo.xml
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\A Picture A Day.exe.manifest
+D:\Github\picture a day\src\c#\ProftaakOefening\obj\Debug\A Picture A Day.application
